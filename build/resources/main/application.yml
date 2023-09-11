@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    config:
+      enabled: false
+  application:
+    name: springboot-retry
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/testRetry
+    database: test-retry
+    username: root
+    password: root
+  feature-flags:
+    application:
+      retry:
+        retries:
+          max-attempts: 2
+          delay: 5000
