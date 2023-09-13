@@ -26,8 +26,8 @@ class GetBookByIdMySqlAdapter(
     private val getBookById = FileReader.execute("sql/getBookById.sql")
 
     @Retryable(
-        maxAttemptsExpression = "\${spring.feature-flags.application.retry.retries.max-attempts}",
-        backoff = Backoff(delayExpression = "\${spring.feature-flags.application.retry.retries.delay}")
+        maxAttemptsExpression = "\${constants.retries.max-attempts}",
+        backoff = Backoff(delayExpression = "\${constants.retries.delay}")
     )
     override fun execute(id: Long): Book {
        try {

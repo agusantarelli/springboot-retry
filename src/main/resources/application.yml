@@ -10,9 +10,7 @@ spring:
     database: test-retry
     username: root
     password: root
-  feature-flags:
-    application:
-      retry:
-        retries:
-          max-attempts: 5
-          delay: 2000
+constants:
+  retries:
+    max-attempts: 3
+    delay: 2000
